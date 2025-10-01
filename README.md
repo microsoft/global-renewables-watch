@@ -1,14 +1,24 @@
-# Project
+# Global Renewables Watch
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+We present a comprehensive global temporal dataset of commercial solar photovoltaic (PV) farms and onshore wind turbines, derived from high-resolution satellite imagery analyzed quarterly from the fourth quarter of 2017 to the second quarter of 2024. We create this dataset by training deep learning based segmentation models to identify these renewable energy installations from satellite imagery, then deploy them on over 13 trillion pixels covering the world. For each detected feature, we estimate the construction date and the preceding land use type. This dataset offers crucial insights into progress toward sustainable development goals and serves as a valuable resource for policymakers, researchers, and stakeholders aiming to assess and promote effective strategies for renewable energy deployment. Our final spatial dataset includes 375,197 individual wind turbines and 86,410 solar PV installations. We aggregate our predictions to the country level --- estimating total power capacity based on construction date, solar PV area, and number of windmills --- and find a R2 values of 0.96 and 0.93 for solar PV and onshore wind respectively compared to IRENA's most recent 2023 country level capacity estimates.
 
-As the maintainer of this project, please make a few updates:
+## Dataset Download
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+You can download the dataset from the release page, [here](https://github.com/microsoft/global-renewables-watch/releases/tag/v1.0).
+
+
+## Citation
+
+If you use this work, please consider citing our [paper](https://arxiv.org/abs/2503.14860):
+```
+@article{robinson2025global,
+  title={Global Renewables Watch: A Temporal Dataset of Solar and Wind Energy Derived from Satellite Imagery},
+  author={Robinson, Caleb and Ortiz, Anthony and Kim, Allen and Dodhia, Rahul and Zolli, Andrew and Nagaraju, Shivaprakash K and Oakleaf, James and Kiesecker, Joe and Ferres, Juan M Lavista},
+  journal={arXiv preprint arXiv:2503.14860},
+  year={2025}
+}
+```
+
 
 ## Contributing
 
