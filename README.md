@@ -70,6 +70,30 @@ python inference_wind.py \
 - GPU is recommended for faster inference but not required
 - Output files maintain the same geospatial reference as input files
 
+## Polygonization
+
+After running inference, use `polygonize.py` to convert raster predictions into vector features (GeoJSON format). This script automatically processes both solar and wind predictions:
+
+- **Solar**: Extracts polygon features of detected solar panels (filtered by minimum area)
+- **Wind**: Extracts centroid points of detected wind turbines
+
+### Usage
+
+```bash
+python polygonize.py \
+    --input-dir results/ \
+    --output-dir vectors/ \
+    --min-area 10000 \
+    --num-workers 6 \
+    --verbose
+```
+
+**Output:**
+- Solar predictions → `*_solar.geojson` (Polygon features with area)
+- Wind predictions → `*_wind.geojson` (Point features with area)
+- All geometries are in EPSG:3857 projection
+- Features include `filename` and `area` (in m²) properties
+
 
 ## Citation
 
