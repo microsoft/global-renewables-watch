@@ -1,0 +1,18 @@
+name: grw
+channels:
+  - conda-forge
+dependencies:
+  - gdal
+  - python<3.13
+  - pip
+  - pip:
+    - loguru
+    - torchgeo[all]<0.8
+    - jupyter
+    - mercantile>=1.2
+    - pandas
+    - utm
+    - geopandas
+    - pyarrow
+    - pydantic<3
+    - tensorboard
