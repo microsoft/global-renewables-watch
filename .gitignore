@@ -1,6 +1,6 @@
 data/
 results/
-models/
+/models/
 .github/
 
 # Notebooks
