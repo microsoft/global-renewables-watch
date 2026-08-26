@@ -111,8 +111,10 @@ def get_args() -> argparse.Namespace:
 
 
 def main(args: argparse.Namespace) -> None:
-    assert os.path.exists(args.input_fn), f"Input file not found: {args.input_fn}"
-    assert os.path.exists(args.model_fn), f"Model file not found: {args.model_fn}"
+    if not os.path.exists(args.input_fn):
+        raise FileNotFoundError(f"Input file not found: {args.input_fn}")
+    if not os.path.exists(args.model_fn):
+        raise FileNotFoundError(f"Model file not found: {args.model_fn}")
 
     if args.verbose:
         print("Starting wind turbine inference...")
@@ -130,7 +132,7 @@ def main(args: argparse.Namespace) -> None:
         input_stds = list(map(float, args.input_stds.split(",")))
     else:
         raise NotImplementedError("Sample stats calculation is not yet implemented")
-    checkpoint = torch.load(args.model_fn, map_location="cpu")
+    checkpoint = torch.load(args.model_fn, map_location="cpu", weights_only=True)
     opts = checkpoint["params"]
 
     if opts["model"] == "unet":
