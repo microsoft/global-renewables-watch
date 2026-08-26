@@ -7,6 +7,7 @@ dependencies:
   - pip
   - pip:
     - loguru
+    - torch>=2.6
     - torchgeo[all]<0.8
     - jupyter
     - mercantile>=1.2
