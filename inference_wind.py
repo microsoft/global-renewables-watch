@@ -11,6 +11,7 @@ from tqdm import tqdm
 
 from src.wind.data.tile_dataset import TileInferenceDataset
 from src.wind.models.fcn8_resnet import FCN8
+from src.wind.models.unet import UnetModel
 
 NUM_WORKERS = 8
 CHIP_SIZE = 256
@@ -133,8 +134,6 @@ def main(args: argparse.Namespace) -> None:
     opts = checkpoint["params"]
 
     if opts["model"] == "unet":
-        from src.wind.models.unet import UnetModel
-
         model = UnetModel(opts)
     elif opts["model"] == "fcn":
         model = FCN8()
