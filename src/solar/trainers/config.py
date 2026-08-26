@@ -116,7 +116,7 @@ class TrainerConfig(SegmentationBaseModel):
 
     # input data params
     experiment_short_name = "example_experiment"
-    dir_parent: Optional[str] = "/home/tammyglazer/ssdshared/solar/"
+    dir_parent: Optional[str] = None
     subdirs: Optional[List[str]] = ["test1/", "test2/"]
 
     # generated during validation if not explicitly passed in
