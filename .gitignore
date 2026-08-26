@@ -1,6 +1,9 @@
-data/
-results/
-models/
+# Local input/output directories (anchored to the repository root so that they
+# don't match source directories such as src/wind/models/)
+/data/
+/results/
+/models/
+/vectors/
 .github/
 
 # Notebooks
