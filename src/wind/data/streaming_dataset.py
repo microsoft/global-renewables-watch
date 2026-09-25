@@ -169,16 +169,16 @@ class StreamingGeospatialDataset(IterableDataset):
                 while i < self.num_chips_per_tile:
                     # Select the top left pixel of our chip randomly
                     if self.subtile_bounds is None:
-                        x = np.random.randint(0, width - self.chip_size)
-                        y = np.random.randint(0, height - self.chip_size)
+                        x = np.random.randint(0, width - self.chip_size + 1)
+                        y = np.random.randint(0, height - self.chip_size + 1)
                     else:
                         x = np.random.randint(
                             self.subtile_bounds[0],
-                            self.subtile_bounds[1] - self.chip_size,
+                            self.subtile_bounds[1] - self.chip_size + 1,
                         )
                         y = np.random.randint(
                             self.subtile_bounds[2],
-                            self.subtile_bounds[3] - self.chip_size,
+                            self.subtile_bounds[3] - self.chip_size + 1,
                         )
 
                     # Read imagery / labels
